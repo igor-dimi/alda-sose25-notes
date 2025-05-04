@@ -7,16 +7,22 @@ book:
   date: "12/18/2024"
   chapters:
     - index.qmd
+    - part: "Python"
+      chapters: 
+        - python/iterables.qmd
   downloads: ["pdf"]
   page-navigation: true
 
 bibliography: references.bib
+
+number-depth: 1
 
 csl: nature.csl
 
 format:
   html:
     theme: cosmo
+    toc-depth: 2
   pdf:
     documentclass: scrreprt
     number-depth: 1
