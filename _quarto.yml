@@ -10,6 +10,9 @@ book:
     - part: "Python"
       chapters: 
         - python/iterables.qmd
+    - part: "Exam"
+      chapters:
+        - exam/2024.qmd
   downloads: ["pdf"]
   page-navigation: true
 
