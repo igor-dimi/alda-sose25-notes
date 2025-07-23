@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Igor Dimitrov">
-<meta name="dcterms.date" content="2024-12-18">
 
-<title>Algorithms &amp; Data Structures SoSe 25 Notes</title>
+<title>Algorithms &amp; Data Structures SoSe 25 Notes - 2&nbsp; Ex 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,23 +23,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./python/iterables.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../python/iterables.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -82,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exam/2024.html">Exam</a></li><li class="breadcrumb-item"><a href="../exam/2024.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ex 2024</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -97,9 +124,9 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Algorithms &amp; Data Structures SoSe 25 Notes</a> 
+      <a href="../">Algorithms &amp; Data Structures SoSe 25 Notes</a> 
         <div class="sidebar-tools-main">
-    <a href="./Algorithms---Data-Structures-SoSe-25-Notes.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="../Algorithms---Data-Structures-SoSe-25-Notes.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -112,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -127,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./python/iterables.html" class="sidebar-item-text sidebar-link">
+  <a href="../python/iterables.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Iterables</span></span></a>
   </div>
 </li>
@@ -144,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exam/2024.html" class="sidebar-item-text sidebar-link">
+  <a href="../exam/2024.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ex 2024</span></span></a>
   </div>
 </li>
@@ -160,35 +187,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#problem-1-pseudocode" id="toc-problem-1-pseudocode" class="nav-link active" data-scroll-target="#problem-1-pseudocode">Problem 1: Pseudocode</a></li>
+  <li><a href="#problem-2-heaps" id="toc-problem-2-heaps" class="nav-link" data-scroll-target="#problem-2-heaps">Problem 2: Heaps</a></li>
+  <li><a href="#problem-3-hashing" id="toc-problem-3-hashing" class="nav-link" data-scroll-target="#problem-3-hashing">Problem 3: Hashing</a></li>
+  <li><a href="#problem-4-mathcalo-notation-and-code-analysis" id="toc-problem-4-mathcalo-notation-and-code-analysis" class="nav-link" data-scroll-target="#problem-4-mathcalo-notation-and-code-analysis">Problem 4: <span class="math inline">\(\mathcal{O}\)</span>-Notation and Code Analysis</a></li>
+  <li><a href="#problem-5-short-proofs" id="toc-problem-5-short-proofs" class="nav-link" data-scroll-target="#problem-5-short-proofs">Problem 5: Short Proofs</a></li>
+  <li><a href="#problem-6-induction" id="toc-problem-6-induction" class="nav-link" data-scroll-target="#problem-6-induction">Problem 6: Induction</a></li>
+  <li><a href="#problem-7-graphs" id="toc-problem-7-graphs" class="nav-link" data-scroll-target="#problem-7-graphs">Problem 7: Graphs</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exam/2024.html">Exam</a></li><li class="breadcrumb-item"><a href="../exam/2024.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ex 2024</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Algorithms &amp; Data Structures SoSe 25 Notes</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ex 2024</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Igor Dimitrov </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">December 18, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -198,8 +219,144 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
+<section id="problem-1-pseudocode" class="level2">
+<h2 class="anchored" data-anchor-id="problem-1-pseudocode">Problem 1: Pseudocode</h2>
+<p>Let <span class="math inline">\(A\)</span> be the adjacency matrix representation of a directed graph <span class="math inline">\(G\)</span> with <span class="math inline">\(n\)</span> nodes. A node <span class="math inline">\(u\)</span> is called <em>balanced</em> if the in-degree and out-degree of the nodes are equal. Let <span class="math inline">\(N_A\)</span> be the amount of balanced nodes in the graph <span class="math inline">\(G\)</span>.</p>
+<ol type="a">
+<li>Describe an algorithm <code>CountBalanced</code> in pseudocode, that computes <span class="math inline">\(N_A\)</span> in optimal asymptotic time.</li>
+<li>Analyse the run-time of <code>CountBalanced</code> and show that it is optimal.</li>
+</ol>
+</section>
+<section id="problem-2-heaps" class="level2">
+<h2 class="anchored" data-anchor-id="problem-2-heaps">Problem 2: Heaps</h2>
+<p>In this problem we look at binary Minheaps and carry out depth first search starting form the root, considering two variants:</p>
+<ul>
+<li><code>incrDS</code>: We visit the children of a node in increasing order, sorted w.r.t. the keys</li>
+<li><code>decrDS</code>: We visit the children of a node in decreasing oder, sorted w.r.t. the keys</li>
+</ul>
+<ol type="a">
+<li><p>Consider the following Min-Heap represented as an array <span class="math inline">\(H[1..10]\)</span>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/heap.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>heap</figcaption>
+</figure>
+</div>
+<p>Provide the keys in the order that they are visited by <code>decrDS</code>:</p>
+<p>Key-order: …</p></li>
+<li><p>In the above heap <code>incrDS</code> traverses the keys in a globally increasing order, i.e.&nbsp;it effectively ‘sorts’ the elements. Therefore we try to construct the following “sorting” algorithm:</p>
+<p>Let <span class="math inline">\(A[1..n]\)</span> be an array with <span class="math inline">\(n\)</span> keys. (You may assume that the keys are distinct).</p>
+<ol type="1">
+<li>Transform <span class="math inline">\(A\)</span> into a Min-Heap array representation</li>
+<li>Traverse <span class="math inline">\(A\)</span> with <code>incrDS</code> and output the elements in the order that they are visited</li>
+</ol>
+<p>Prove that this algorithm can not always sort correctly. Provide a short analysis on the run-time of this algorithm.</p></li>
+</ol>
+</section>
+<section id="problem-3-hashing" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3-hashing">Problem 3: Hashing</h2>
+<ol type="a">
+<li><p>Consider the following hash table of size 13:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/hash-1.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>hash 1</figcaption>
+</figure>
+</div>
+<p>You can assume that each empty cells corresponds to <span class="math inline">\(\bot\)</span>.</p>
+<p>We consider first open hashing with hash function <span class="math inline">\(f\)</span>, defined as:</p>
+<p><span class="math display">\[f(k) := 3k + 2 \mod 13\]</span></p>
+<p>and we use linear search. Insert the elements 1, 2, 3, 4, 5 in this order in the provided table.</p></li>
+<li><p>Consider another hash table of size 10:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/hash-2.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>hash 2</figcaption>
+</figure>
+</div>
+<p>We again use open hashing this time with the hashing function <span class="math inline">\(g\)</span> defined as:</p>
+<p><span class="math display">\[g(k) := k\mod 10\]</span></p>
+<p>Delete the element 22 and provide the state of the hash table after this operation:</p></li>
+</ol>
+</section>
+<section id="problem-4-mathcalo-notation-and-code-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="problem-4-mathcalo-notation-and-code-analysis">Problem 4: <span class="math inline">\(\mathcal{O}\)</span>-Notation and Code Analysis</h2>
+<ol type="a">
+<li><p>for each of the following cases provide a function <span class="math inline">\(f: \mathbb{N} \to \mathbb{R}\)</span> that satisfies the given asymptotic constraints:</p>
+<ul>
+<li><span class="math inline">\(f \in \omega \left( \frac{\log x}{\log \log x}\right)\)</span> and <span class="math inline">\(f \in \omicron(\log x)\)</span></li>
+<li><span class="math inline">\(f \in \omega(\sqrt[3]{m})\)</span> and <span class="math inline">\(f \in \omicron\left(\frac{m}{\log m}\right)\)</span></li>
+<li><span class="math inline">\(f \in \omega(\log t!)\)</span> and <span class="math inline">\(f \in\omicron(t^2)\)</span></li>
+</ul></li>
+<li><p>Solve the following recurive equations. For all the equations it holds that <span class="math inline">\(T(n) = 1\)</span> and <span class="math inline">\(n\leq 1\)</span>. Assume for simplicity that for all equations <span class="math inline">\(n\)</span> is chosen s.t. divisions result without a rest.</p>
+<ul>
+<li><span class="math inline">\(T(n) = T(n - 1) + 2n\)</span>. <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\quad\quad T(n) \in \Theta\left(\quad \right)\)</span></li>
+<li><span class="math inline">\(T(n) = n\cdot T(n - 1)\)</span>. <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\quad\quad T(n) \in \Theta\left(\quad \right)\)</span></li>
+<li><span class="math inline">\(T(n) = 16\cdot T(\frac{n}{2})\)</span>. <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\quad\quad T(n) \in \Theta\left(\quad \right)\)</span></li>
+<li><span class="math inline">\(T(n) = 2\cdot T(\frac{n}{4}) + n\)</span>. <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\quad\quad T(n) \in \Theta\left(\quad \right)\)</span></li>
+</ul></li>
+<li><p>Provide the run-time complexit of the follwoing pseudocode algorithms in <span class="math inline">\(\mathcal{\Theta}\)</span> notation.</p>
+<ul>
+<li><p>:</p>
+<pre><code>read(k)
+for i = 1 to k:
+ j = k^2
+ while j &gt; 1:
+    j = j / 3</code></pre></li>
+<li><p>:</p>
+<pre><code>read(t)
+k = 1
+i = 1
+while k &lt;= t : 
+ i = i + 1
+ k = k + i</code></pre></li>
+<li><p>:</p>
+<pre><code>def fun(n) :
+ read(n)
+ if n &lt; 10^6 : return
+ f(n / 2)
+ i = 0
+ while i &lt; n : i = i + 1
+ f(n / 2)</code></pre></li>
+</ul></li>
+</ol>
+</section>
+<section id="problem-5-short-proofs" class="level2">
+<h2 class="anchored" data-anchor-id="problem-5-short-proofs">Problem 5: Short Proofs</h2>
+<p>Show or refute following propositions:</p>
+<ol type="a">
+<li>Let <span class="math inline">\(T = (V, E)\)</span> be an arbitrary <span class="math inline">\((a, b)\)</span>-Tree. Then <span class="math inline">\(T\)</span> is also a <span class="math inline">\((a, b +  1)\)</span>-Tree</li>
+<li>For any weighted, undirected, connected graph <span class="math inline">\(G = (V, E)\)</span> any shortest-path tree is a minimal spanning tree.</li>
+<li>For any <span class="math inline">\(n &gt; 1000\)</span> there is a binary search tree that stores <span class="math inline">\(n\)</span> keys <span class="math inline">\(\{1, \ldots, n\}\)</span></li>
+</ol>
+</section>
+<section id="problem-6-induction" class="level2">
+<h2 class="anchored" data-anchor-id="problem-6-induction">Problem 6: Induction</h2>
+<p>For a set <span class="math inline">\(X\)</span>, <span class="math inline">\(\mathcal{P}(A)\)</span> is the set of all subsets of <span class="math inline">\(X\)</span>, called the power set.</p>
+<p>Shows via mathematical induction that:</p>
+<p><span class="math display">\[\text{for any set } X \text{ s.t. } |X| = n \text{ it holds that } |\mathcal{P}(X)| = 2^n\]</span></p>
+</section>
+<section id="problem-7-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="problem-7-graphs">Problem 7: Graphs</h2>
+<ol type="a">
+<li><p>Consider the following graph <span class="math inline">\(G\)</span>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/graph-1.png" class="img-fluid figure-img" style="width:85.0%"></p>
+<figcaption>graph-1</figcaption>
+</figure>
+</div>
+<p>Carry out the Dijkstra algorithm to find the shortest paths starting from the start node <span class="math inline">\(S\)</span>.</p>
+<p>Provide each (Predecessor, Distance)-combination that is assigned to the node <span class="math inline">\(T\)</span> by the algorithm:</p></li>
+<li><p>provide the adjacency field representation of the following graph (CSR). Use the 1 as the smallest index and sort the neighbours in increasing order w.r.t. the index.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/graph-2.png" class="img-fluid figure-img" style="width:85.0%"></p>
+<figcaption>graph-2</figcaption>
+</figure>
+</div></li>
+<li><p>Describe in pseudocode how the k-th neighbor of the i-th node is represented in the adjacency-field representation, using 1 as the smallest index. Name the invariants in the code that guarantee that required entry exists in the data structure. Provide the asymptotic analsysis of the <span class="math inline">\(\Theta\)</span> run-time of the algorithm.</p></li>
+</ol>
 
 
 </section>
@@ -616,11 +773,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../python/iterables.html" class="pagination-link" aria-label="Iterables">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Iterables</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./python/iterables.html" class="pagination-link" aria-label="Iterables">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Iterables</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

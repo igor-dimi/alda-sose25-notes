@@ -74,5 +74,93 @@
       "Python",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Iterables</span>"
     ]
+  },
+  {
+    "objectID": "exam/2024.html",
+    "href": "exam/2024.html",
+    "title": "2  Ex 2024",
+    "section": "",
+    "text": "Problem 1: Pseudocode\nLet \\(A\\) be the adjacency matrix representation of a directed graph \\(G\\) with \\(n\\) nodes. A node \\(u\\) is called balanced if the in-degree and out-degree of the nodes are equal. Let \\(N_A\\) be the amount of balanced nodes in the graph \\(G\\).",
+    "crumbs": [
+      "Exam",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+    ]
+  },
+  {
+    "objectID": "exam/2024.html#problem-1-pseudocode",
+    "href": "exam/2024.html#problem-1-pseudocode",
+    "title": "2  Ex 2024",
+    "section": "",
+    "text": "Describe an algorithm CountBalanced in pseudocode, that computes \\(N_A\\) in optimal asymptotic time.\nAnalyse the run-time of CountBalanced and show that it is optimal.",
+    "crumbs": [
+      "Exam",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+    ]
+  },
+  {
+    "objectID": "exam/2024.html#problem-2-heaps",
+    "href": "exam/2024.html#problem-2-heaps",
+    "title": "2  Ex 2024",
+    "section": "Problem 2: Heaps",
+    "text": "Problem 2: Heaps\nIn this problem we look at binary Minheaps and carry out depth first search starting form the root, considering two variants:\n\nincrDS: We visit the children of a node in increasing order, sorted w.r.t. the keys\ndecrDS: We visit the children of a node in decreasing oder, sorted w.r.t. the keys\n\n\nConsider the following Min-Heap represented as an array \\(H[1..10]\\):\n\n\n\nheap\n\n\nProvide the keys in the order that they are visited by decrDS:\nKey-order: …\nIn the above heap incrDS traverses the keys in a globally increasing order, i.e. it effectively ‘sorts’ the elements. Therefore we try to construct the following “sorting” algorithm:\nLet \\(A[1..n]\\) be an array with \\(n\\) keys. (You may assume that the keys are distinct).\n\nTransform \\(A\\) into a Min-Heap array representation\nTraverse \\(A\\) with incrDS and output the elements in the order that they are visited\n\nProve that this algorithm can not always sort correctly. Provide a short analysis on the run-time of this algorithm.",
+    "crumbs": [
+      "Exam",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+    ]
+  },
+  {
+    "objectID": "exam/2024.html#problem-3-hashing",
+    "href": "exam/2024.html#problem-3-hashing",
+    "title": "2  Ex 2024",
+    "section": "Problem 3: Hashing",
+    "text": "Problem 3: Hashing\n\nConsider the following hash table of size 13:\n\n\n\nhash 1\n\n\nYou can assume that each empty cells corresponds to \\(\\bot\\).\nWe consider first open hashing with hash function \\(f\\), defined as:\n\\[f(k) := 3k + 2 \\mod 13\\]\nand we use linear search. Insert the elements 1, 2, 3, 4, 5 in this order in the provided table.\nConsider another hash table of size 10:\n\n\n\nhash 2\n\n\nWe again use open hashing this time with the hashing function \\(g\\) defined as:\n\\[g(k) := k\\mod 10\\]\nDelete the element 22 and provide the state of the hash table after this operation:",
+    "crumbs": [
+      "Exam",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+    ]
+  },
+  {
+    "objectID": "exam/2024.html#problem-4-mathcalo-notation-and-code-analysis",
+    "href": "exam/2024.html#problem-4-mathcalo-notation-and-code-analysis",
+    "title": "2  Ex 2024",
+    "section": "Problem 4: \\(\\mathcal{O}\\)-Notation and Code Analysis",
+    "text": "Problem 4: \\(\\mathcal{O}\\)-Notation and Code Analysis\n\nfor each of the following cases provide a function \\(f: \\mathbb{N} \\to \\mathbb{R}\\) that satisfies the given asymptotic constraints:\n\n\\(f \\in \\omega \\left( \\frac{\\log x}{\\log \\log x}\\right)\\) and \\(f \\in \\omicron(\\log x)\\)\n\\(f \\in \\omega(\\sqrt[3]{m})\\) and \\(f \\in \\omicron\\left(\\frac{m}{\\log m}\\right)\\)\n\\(f \\in \\omega(\\log t!)\\) and \\(f \\in\\omicron(t^2)\\)\n\nSolve the following recurive equations. For all the equations it holds that \\(T(n) = 1\\) and \\(n\\leq 1\\). Assume for simplicity that for all equations \\(n\\) is chosen s.t. divisions result without a rest.\n\n\\(T(n) = T(n - 1) + 2n\\). \\(\\Rightarrow\\) \\(\\quad\\quad T(n) \\in \\Theta\\left(\\quad \\right)\\)\n\\(T(n) = n\\cdot T(n - 1)\\). \\(\\Rightarrow\\) \\(\\quad\\quad T(n) \\in \\Theta\\left(\\quad \\right)\\)\n\\(T(n) = 16\\cdot T(\\frac{n}{2})\\). \\(\\Rightarrow\\) \\(\\quad\\quad T(n) \\in \\Theta\\left(\\quad \\right)\\)\n\\(T(n) = 2\\cdot T(\\frac{n}{4}) + n\\). \\(\\Rightarrow\\) \\(\\quad\\quad T(n) \\in \\Theta\\left(\\quad \\right)\\)\n\nProvide the run-time complexit of the follwoing pseudocode algorithms in \\(\\mathcal{\\Theta}\\) notation.\n\n:\nread(k)\nfor i = 1 to k:\n j = k^2\n while j &gt; 1:\n    j = j / 3\n:\nread(t)\nk = 1\ni = 1\nwhile k &lt;= t : \n i = i + 1\n k = k + i\n:\ndef fun(n) :\n read(n)\n if n &lt; 10^6 : return\n f(n / 2)\n i = 0\n while i &lt; n : i = i + 1\n f(n / 2)",
+    "crumbs": [
+      "Exam",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+    ]
+  },
+  {
+    "objectID": "exam/2024.html#problem-5-short-proofs",
+    "href": "exam/2024.html#problem-5-short-proofs",
+    "title": "2  Ex 2024",
+    "section": "Problem 5: Short Proofs",
+    "text": "Problem 5: Short Proofs\nShow or refute following propositions:\n\nLet \\(T = (V, E)\\) be an arbitrary \\((a, b)\\)-Tree. Then \\(T\\) is also a \\((a, b +  1)\\)-Tree\nFor any weighted, undirected, connected graph \\(G = (V, E)\\) any shortest-path tree is a minimal spanning tree.\nFor any \\(n &gt; 1000\\) there is a binary search tree that stores \\(n\\) keys \\(\\{1, \\ldots, n\\}\\)",
+    "crumbs": [
+      "Exam",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+    ]
+  },
+  {
+    "objectID": "exam/2024.html#problem-6-induction",
+    "href": "exam/2024.html#problem-6-induction",
+    "title": "2  Ex 2024",
+    "section": "Problem 6: Induction",
+    "text": "Problem 6: Induction\nFor a set \\(X\\), \\(\\mathcal{P}(A)\\) is the set of all subsets of \\(X\\), called the power set.\nShows via mathematical induction that:\n\\[\\text{for any set } X \\text{ s.t. } |X| = n \\text{ it holds that } |\\mathcal{P}(X)| = 2^n\\]",
+    "crumbs": [
+      "Exam",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+    ]
+  },
+  {
+    "objectID": "exam/2024.html#problem-7-graphs",
+    "href": "exam/2024.html#problem-7-graphs",
+    "title": "2  Ex 2024",
+    "section": "Problem 7: Graphs",
+    "text": "Problem 7: Graphs\n\nConsider the following graph \\(G\\):\n\n\n\ngraph-1\n\n\nCarry out the Dijkstra algorithm to find the shortest paths starting from the start node \\(S\\).\nProvide each (Predecessor, Distance)-combination that is assigned to the node \\(T\\) by the algorithm:\nprovide the adjacency field representation of the following graph (CSR). Use the 1 as the smallest index and sort the neighbours in increasing order w.r.t. the index.\n\n\n\ngraph-2\n\n\nDescribe in pseudocode how the k-th neighbor of the i-th node is represented in the adjacency-field representation, using 1 as the smallest index. Name the invariants in the code that guarantee that required entry exists in the data structure. Provide the asymptotic analsysis of the \\(\\Theta\\) run-time of the algorithm.",
+    "crumbs": [
+      "Exam",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+    ]
   }
 ]
