@@ -1,0 +1,51 @@
+---
+title: Reading List
+---
+
+
+
+### Basic & Light Reading
+
+* Unlocking Algorithms. Cormen
+* First Course in Algorithms Through Puzzles. Uehara
+
+### Intermediate
+
+* Understanding Algorithms and Data Structures. Brunksill
+* Algorithms + Data Structures = Programs. Wirth
+* Problems on Algorithms. Ian Parberry
+* Fundamentals of Algorithmics. Brassard, Bratley
+* Foundations of Algorithms. Neapolitan
+* Data Structures and Algorithms - a First Course. Adamson
+* Algorithms and Data Structures - Design, Correctness, and Analysis. Kingston
+* Data Structures and Their Algorithms. Lewis, Denenberg
+* Design and Analysis of Algorithms. Smith
+
+### Python
+
+* Data Structures and Algorithms in Python. Lafore
+* Competitive Programming in Python. Duerr
+
+### C
+
+* Algorithms and Data Structures - an Approach in C. 
+* Programs and Data Structures in C. Ammeraal
+* Foundations of Computer Science. Ullman
+
+### C++ 
+
+* Data Structures and Algorithm Analysis in C++. Weiss
+* Data Structures and Problem Solving using C++. Weiss
+* Principles of Algorithmic Problem Solving. Sannemo
+
+### Java
+
+* Fundamentals of OOP and Data Structures in Java. Wiener
+
+### Advanced 
+
+* How to Think About Algorithms. Jeff Edmonds
+* Basic Toolbox. Melhorn 
+* Algorithms. Erickson
+
+
