@@ -10,157 +10,167 @@
     ]
   },
   {
+    "objectID": "reading.html",
+    "href": "reading.html",
+    "title": "1  Reading List",
+    "section": "",
+    "text": "Basic & Light Reading\n\nUnlocking Algorithms. Cormen\nFirst Course in Algorithms Through Puzzles. Uehara\n\n\n\nIntermediate\n\nUnderstanding Algorithms and Data Structures. Brunksill\nAlgorithms + Data Structures = Programs. Wirth\nProblems on Algorithms. Ian Parberry\nFundamentals of Algorithmics. Brassard, Bratley\nFoundations of Algorithms. Neapolitan\nData Structures and Algorithms - a First Course. Adamson\nAlgorithms and Data Structures - Design, Correctness, and Analysis. Kingston\nData Structures and Their Algorithms. Lewis, Denenberg\nDesign and Analysis of Algorithms. Smith\n\n\n\nPython\n\nData Structures and Algorithms in Python. Lafore\nCompetitive Programming in Python. Duerr\n\n\n\nC\n\nAlgorithms and Data Structures - an Approach in C.\nPrograms and Data Structures in C. Ammeraal\nFoundations of Computer Science. Ullman\n\n\n\nC++\n\nData Structures and Algorithm Analysis in C++. Weiss\nData Structures and Problem Solving using C++. Weiss\nPrinciples of Algorithmic Problem Solving. Sannemo\n\n\n\nJava\n\nFundamentals of OOP and Data Structures in Java. Wiener\n\n\n\nAdvanced\n\nHow to Think About Algorithms. Jeff Edmonds\nBasic Toolbox. Melhorn\nAlgorithms. Erickson",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Reading List</span>"
+    ]
+  },
+  {
     "objectID": "python/iterables.html",
     "href": "python/iterables.html",
-    "title": "1  Iterables",
+    "title": "2  Iterables",
     "section": "",
     "text": "for Loops and Comprehensions\nfor loops in Python are used to iterate over any iterable (like lists, tuples, strings, sets, dictionaries, generators, etc.).\nSyntax:",
     "crumbs": [
       "Python",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Iterables</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Iterables</span>"
     ]
   },
   {
     "objectID": "python/iterables.html#for-loops-and-comprehensions",
     "href": "python/iterables.html#for-loops-and-comprehensions",
-    "title": "1  Iterables",
+    "title": "2  Iterables",
     "section": "",
     "text": "for item in iterable:\n    # do something with item\n\nCommon Use Cases & Idioms:\n\nBasic Iteration\nnames = [\"Alice\", \"Bob\", \"Charlie\"]\nfor name in names:\n    print(name)\n\n\nIterating with Index (use enumerate)\nfor i, name in enumerate(names):\n    print(f\"{i}: {name}\")\n\n\nIterating Multiple Sequences (use zip)\nages = [25, 30, 22]\nfor name, age in zip(names, ages):\n    print(f\"{name} is {age} years old\")\n\n\nIterating Over Dictionaries\nperson = {\"name\": \"Alice\", \"age\": 25}\nfor key, value in person.items():\n    print(key, value)\n\n\nNested Loops\nfor i in range(3):\n    for j in range(2):\n        print(i, j)\n\n\n\nWhat Are Comprehensions?\nComprehensions are concise expressions for generating new iterables (like lists, sets, or dicts) using the syntax of a for loop inside a single line.\n\nTypes and Idiomatic Patterns\n\nList Comprehension (most common)\nsquares = [x**2 for x in range(5)]\n# Output: [0, 1, 4, 9, 16]\n\n\nConditional List Comprehension\nevens = [x for x in range(10) if x % 2 == 0]\n# Output: [0, 2, 4, 6, 8]\n\n\nSet Comprehension\nunique_lengths = {len(word) for word in [\"a\", \"ab\", \"abc\", \"ab\"]}\n# Output: {1, 2, 3}\n\n\n️ Dict Comprehension\nwords = [\"apple\", \"banana\", \"cherry\"]\nlengths = {word: len(word) for word in words}\n# Output: {'apple': 5, 'banana': 6, 'cherry': 6}\n\n\nNested Comprehensions (2D lists)\nmatrix = [[i * j for j in range(3)] for i in range(3)]\n# Output: [[0, 0, 0], [0, 1, 2], [0, 2, 4]]",
     "crumbs": [
       "Python",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Iterables</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Iterables</span>"
     ]
   },
   {
     "objectID": "python/iterables.html#enumerate",
     "href": "python/iterables.html#enumerate",
-    "title": "1  Iterables",
+    "title": "2  Iterables",
     "section": "enumerate()",
     "text": "enumerate()\nenumerate() is a built-in Python function that adds a counter to any iterable (like a list, tuple, or string), returning an enumerate object, which yields (index, value) pairs on iteration.\n\nType:\ntype(enumerate(['a', 'b', 'c']))  # &lt;class 'enumerate'&gt;\nLike zip, it’s a lazy iterable, meaning it produces values on demand and can be turned into a list or looped over.\n\n\nBasic Example:\nfruits = ['apple', 'banana', 'cherry']\n\nfor i, fruit in enumerate(fruits):\n    print(i, fruit)\nOutput:\n0 apple\n1 banana\n2 cherry\n\n\nCommon & Idiomatic Use Cases for enumerate()\n\nAvoid Manual Indexing with range(len(...))\n\nInstead of:\nfor i in range(len(fruits)):\n    print(i, fruits[i])\nDo this:\nfor i, fruit in enumerate(fruits):\n    print(i, fruit)\nCleaner, more Pythonic.\n\nStart Index at a Custom Value\n\nfor i, fruit in enumerate(fruits, start=1):\n    print(f\"{i}. {fruit}\")\nOutput:\n1. apple\n2. banana\n3. cherry\nGreat for user-friendly numbering (e.g. starting from 1 instead of 0).\n\nTracking Position in File or Data\n\nwith open(\"file.txt\") as f:\n    for lineno, line in enumerate(f, start=1):\n        print(f\"Line {lineno}: {line.strip()}\")\nCommon in data processing and log parsing.\n\nEnumerate with Conditional Logic\n\ncolors = ['red', 'blue', 'green', 'blue']\nfor i, color in enumerate(colors):\n    if color == 'blue':\n        print(f\"'blue' found at index {i}\")\nHelps track positions that meet a condition.\n\nUse with zip() for Triple Iteration\n\na = ['x', 'y', 'z']\nb = [10, 20, 30]\nfor i, (x, y) in enumerate(zip(a, b)):\n    print(f\"{i}: {x}-{y}\")\nCombines enumeration with parallel iteration.\n\n\n🔚 Summary:\n\n\n\n\n\n\n\n\nFunction\nWhat it does\nOutput form\n\n\n\n\nzip(a, b)\nCombines sequences\n(a[i], b[i])\n\n\nenumerate(x)\nAdds index to an iterable\n(i, x[i])\n\n\nenumerate(x, start=n)\nLike above, but starts at n\n(n, x[0]), (n+1, x[1]), …",
     "crumbs": [
       "Python",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Iterables</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Iterables</span>"
     ]
   },
   {
     "objectID": "python/iterables.html#zip",
     "href": "python/iterables.html#zip",
-    "title": "1  Iterables",
+    "title": "2  Iterables",
     "section": "zip()",
     "text": "zip()\nThe built-in zip() function takes two or more iterables (like lists, tuples, or strings) and aggregates elements from each iterable by position (i.e. index). It returns an iterator of tuples, where the i-th tuple contains the i-th element from each of the input iterables.\nzip(iterable1, iterable2, ...)\nIt stops when the shortest input iterable is exhausted.\nYou can think of zip() as:\nzip(A, B, C) ⇒ [(A[0], B[0], C[0]), (A[1], B[1], C[1]), ...]\nNo matter the input shape, zip() always does the same thing: Group elements by position across multiple iterables.\nzip() returns a zip object, which is an iterator. You need to explicitly convert it into a list or tuple to see the full output:\nlist(zip(...))     # common\ntuple(zip(...))    # possible\n\nCommon Use Cases and Idiomatic Patterns\n\nCombining Lists (Zipping)\n\nletters = ['a', 'b', 'c']\nnumbers = [1, 2, 3]\n\nzipped = list(zip(letters, numbers))\nprint(zipped)\n# Output: [('a', 1), ('b', 2), ('c', 3)]\nUseful for:\n\nPairing related data.\nIterating in parallel over multiple lists.\n\n\nLooping Over Zipped Values\n\nnames = ['Alice', 'Bob']\nscores = [85, 92]\n\nfor name, score in zip(names, scores):\n    print(f\"{name} scored {score}\")\n# Output:\n# Alice scored 85\n# Bob scored 92\nThis is an idiomatic way to loop over multiple sequences in sync.\n\nUnzipping (Inverse of zip) with * Unpacking\n\npairs = [('a', 1), ('b', 2), ('c', 3)]\n\nletters, numbers = zip(*pairs)\n\nprint(letters)  # Output: ('a', 'b', 'c')\nprint(numbers)  # Output: (1, 2, 3)\nExplanation:\n\n*pairs unpacks the list into separate arguments: zip(('a', 1), ('b', 2), ...)\nzip() groups by position: first elements, second elements, etc.\n\nThis is effectively transposing a 2D structure.\n\nCreating Dictionaries\n\nkeys = ['name', 'age']\nvalues = ['Alice', 30]\n\ndictionary = dict(zip(keys, values))\nprint(dictionary)\n# Output: {'name': 'Alice', 'age': 30}\nA common idiom when you have two separate sequences representing keys and values.\n\nZipping with Unequal Lengths\n\na = [1, 2, 3]\nb = ['x', 'y']\n\nprint(list(zip(a, b)))\n# Output: [(1, 'x'), (2, 'y')]\nOnly pairs up to the shortest iterable. (See itertools.zip_longest() if you want padding.)\n\n\nUnified Understanding: Zip vs. “Unzip”\nWhy zip() seems to do two very different things:\n\nZipping: Combine separate lists into paired tuples.\nUnzipping: Split paired tuples into separate lists.\n\nclarification:\n# Zipping\nlist1 = ['a', 'b', 'c']\nlist2 = [1, 2, 3]\nzipped = list(zip(list1, list2))\n# Output: [('a', 1), ('b', 2), ('c', 3)]\n\n# Unzipping\npairs = [('a', 1), ('b', 2), ('c', 3)]\nunzipped = list(zip(*pairs))\n# Output: [('a', 'b', 'c'), (1, 2, 3)]\nEven though the intent differs, the operation is identical:\n\nGroup elements by position across the given iterables.\n\n\nIn zipping, the elements come from separate sequences.\nIn unzipping, the unpacking * turns a list of tuples into separate positional iterables, and zip groups those.\n\nSo:\n\nzip(A, B) zips rows.\nzip(*rows) transposes the matrix — an “unzip” operation in spirit, but still just zip applied to unpacked input.\n\n\n\nBonus: Visual Matrix Analogy\nConsider this “table” of rows (a list of tuples):\nrows = [('a', 1),\n        ('b', 2),\n        ('c', 3)]\nIf you do:\nzip(*rows)\nYou’re transposing it into:\n[('a', 'b', 'c'), (1, 2, 3)]\nThis is column-wise grouping.\n\n\nSummary\n\nzip() is a fundamental tool for working with multiple iterables in parallel.\nAlways groups by index.\nUse it to zip, loop, unzip, transpose, and build dictionaries.\nWhen used with *, you can reverse its effect by unpacking rows into inputs.\n\nIt’s simple, powerful, and highly idiomatic in Python.",
     "crumbs": [
       "Python",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Iterables</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Iterables</span>"
     ]
   },
   {
     "objectID": "python/iterables.html#map-and-filter",
     "href": "python/iterables.html#map-and-filter",
-    "title": "1  Iterables",
+    "title": "2  Iterables",
     "section": "map() and filter()",
     "text": "map() and filter()\n\nWhat is map()?\nmap(func, iterable) applies the function func to each item in the iterable, returning a map object (an iterator).\n\n\nBasic Use:\nnums = [1, 2, 3, 4]\nsquared = list(map(lambda x: x**2, nums))\n# Output: [1, 4, 9, 16]\n\n\nWhat is filter()?\nfilter(func, iterable) selects items from the iterable for which func(item) is true, returning a filter object (an iterator).\nnums = [1, 2, 3, 4]\nevens = list(filter(lambda x: x % 2 == 0, nums))\n# Output: [2, 4]\n\n\nIdiomatic Use Cases:\n\nApply Transformation to All Elements\nuppercased = list(map(str.upper, [\"a\", \"b\", \"c\"]))\n# Output: ['A', 'B', 'C']\n\n\nFilter with Condition\nshort_words = list(filter(lambda w: len(w) &lt; 4, [\"a\", \"apple\", \"bat\", \"cat\"]))\n# Output: ['a', 'bat', 'cat']\n\n\nCombine with zip\na = [1, 2, 3]\nb = [4, 5, 6]\nsummed = list(map(lambda x: x[0] + x[1], zip(a, b)))\n# Output: [5, 7, 9]\n\n\nEquivalent List Comprehensions (more Pythonic)\n# Instead of map\n[x**2 for x in nums]\n\n# Instead of filter\n[x for x in nums if x % 2 == 0]\nNote: While map and filter are perfectly valid, list comprehensions are often preferred in Python due to better readability.\nFinal Recap Table\n\n\n\n\n\n\n\n\nConcept\nDescription\nCommon Use Cases\n\n\n\n\nfor loop\nIterates over any iterable\nBasic iteration, nested loops\n\n\nComprehension\nConcise iterable construction\nList/set/dict creation, filtering\n\n\nmap(func, it)\nApply func to all items\nTransform elements\n\n\nfilter(func, it)\nKeep items where func(item) is True\nSelective filtering",
     "crumbs": [
       "Python",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Iterables</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Iterables</span>"
     ]
   },
   {
     "objectID": "python/iterables.html#extended-unpacking-in-python-with-and",
     "href": "python/iterables.html#extended-unpacking-in-python-with-and",
-    "title": "1  Iterables",
+    "title": "2  Iterables",
     "section": "Extended Unpacking in Python with * and **",
     "text": "Extended Unpacking in Python with * and **\nPython allows powerful unpacking syntax to distribute or collect values in assignments and function calls.\n\nSequence Unpacking (with *)\nStandard unpacking:\na, b, c = [1, 2, 3]\nprint(a, b, c)\nOutput:\n1 2 3\nExtended unpacking:\na, *b = [1, 2, 3, 4]\nprint(a, b)\nOutput:\n1 [2, 3, 4]\n*a, b = [1, 2, 3, 4]\nprint(a, b)\nOutput:\n[1, 2, 3] 4\na, *b, c = [1, 2, 3, 4, 5]\nprint(a, b, c)\nOutput:\n1 [2, 3, 4] 5\n\n\nUnpacking in Function Calls (with * and **)\n\nPositional unpacking with *:\ndef add(a, b, c):\n    return a + b + c\n\nnums = [1, 2, 3]\nprint(add(*nums))\nOutput:\n6\n\n\nKeyword unpacking with **:\ndef greet(name, greeting):\n    return f\"{greeting}, {name}!\"\n\ndata = {'name': 'Alice', 'greeting': 'Hello'}\nprint(greet(**data))\nOutput:\nHello, Alice!\n\n\n\nFunction Definitions with *args and **kwargs\ndef show_args(*args):\n    print(args)\n\nshow_args(1, 2, 3)\nOutput:\n(1, 2, 3)\ndef show_kwargs(**kwargs):\n    print(kwargs)\n\nshow_kwargs(a=1, b=2)\nOutput:\n{'a': 1, 'b': 2}\n\n\n\nMixing Both *args and **kwargs\ndef demo(a, b, *args, **kwargs):\n    print(f\"a = {a}\")\n    print(f\"b = {b}\")\n    print(f\"args = {args}\")\n    print(f\"kwargs = {kwargs}\")\n\npos = [1, 2, 3, 4]\nkw = {'x': 10, 'y': 20}\ndemo(*pos, **kw)\nOutput:\na = 1\nb = 2\nargs = (3, 4)\nkwargs = {'x': 10, 'y': 20}\n\n\nComparing Similar Function Calls\ndef mixed(a, *rest):\n    print(f\"a = {a}\")\n    print(f\"rest = {rest}\")\n\nl = [1, 2, 3]\na = 0\nmixed(a, *l)\nOutput:\na = 0\nrest = (1, 2, 3)\nmixed(a, l)\nOutput:\na = 0\nrest = ([1, 2, 3],)\n\n\nSummary Table\n\n\n\n\n\n\n\n\n\nContext\nSyntax\nWhat it Does\nExample\n\n\n\n\nAssignment\n*var\ncollects excess items into a list\na, *b = [1,2,3] → b=[2,3]\n\n\nFunction call\n*seq\nunpacks iterable into positional arguments\nf(*[1,2]) → f(1,2)\n\n\nFunction call\n**dict\nunpacks dictionary into keyword arguments\nf(**{'x':1}) → f(x=1)\n\n\nFunction definition\n*args\ncollects extra positional arguments as tuple\ndef f(*args)\n\n\nFunction definition\n**kwargs\ncollects extra keyword arguments as dictionary\ndef f(**kwargs)",
     "crumbs": [
       "Python",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Iterables</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Iterables</span>"
     ]
   },
   {
     "objectID": "exam/2024.html",
     "href": "exam/2024.html",
-    "title": "2  Ex 2024",
+    "title": "3  Ex 2024",
     "section": "",
     "text": "Problem 1: Pseudocode\nLet \\(A\\) be the adjacency matrix representation of a directed graph \\(G\\) with \\(n\\) nodes. A node \\(u\\) is called balanced if the in-degree and out-degree of the nodes are equal. Let \\(N_A\\) be the amount of balanced nodes in the graph \\(G\\).",
     "crumbs": [
       "Exam",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ex 2024</span>"
     ]
   },
   {
     "objectID": "exam/2024.html#problem-1-pseudocode",
     "href": "exam/2024.html#problem-1-pseudocode",
-    "title": "2  Ex 2024",
+    "title": "3  Ex 2024",
     "section": "",
     "text": "Describe an algorithm CountBalanced in pseudocode, that computes \\(N_A\\) in optimal asymptotic time.\nAnalyse the run-time of CountBalanced and show that it is optimal.",
     "crumbs": [
       "Exam",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ex 2024</span>"
     ]
   },
   {
     "objectID": "exam/2024.html#problem-2-heaps",
     "href": "exam/2024.html#problem-2-heaps",
-    "title": "2  Ex 2024",
+    "title": "3  Ex 2024",
     "section": "Problem 2: Heaps",
     "text": "Problem 2: Heaps\nIn this problem we look at binary Minheaps and carry out depth first search starting form the root, considering two variants:\n\nincrDS: We visit the children of a node in increasing order, sorted w.r.t. the keys\ndecrDS: We visit the children of a node in decreasing oder, sorted w.r.t. the keys\n\n\nConsider the following Min-Heap represented as an array \\(H[1..10]\\):\n\n\n\nheap\n\n\nProvide the keys in the order that they are visited by decrDS:\nKey-order: …\nIn the above heap incrDS traverses the keys in a globally increasing order, i.e. it effectively ‘sorts’ the elements. Therefore we try to construct the following “sorting” algorithm:\nLet \\(A[1..n]\\) be an array with \\(n\\) keys. (You may assume that the keys are distinct).\n\nTransform \\(A\\) into a Min-Heap array representation\nTraverse \\(A\\) with incrDS and output the elements in the order that they are visited\n\nProve that this algorithm can not always sort correctly. Provide a short analysis on the run-time of this algorithm.",
     "crumbs": [
       "Exam",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ex 2024</span>"
     ]
   },
   {
     "objectID": "exam/2024.html#problem-3-hashing",
     "href": "exam/2024.html#problem-3-hashing",
-    "title": "2  Ex 2024",
+    "title": "3  Ex 2024",
     "section": "Problem 3: Hashing",
     "text": "Problem 3: Hashing\n\nConsider the following hash table of size 13:\n\n\n\nhash 1\n\n\nYou can assume that each empty cells corresponds to \\(\\bot\\).\nWe consider first open hashing with hash function \\(f\\), defined as:\n\\[f(k) := 3k + 2 \\mod 13\\]\nand we use linear search. Insert the elements 1, 2, 3, 4, 5 in this order in the provided table.\nConsider another hash table of size 10:\n\n\n\nhash 2\n\n\nWe again use open hashing this time with the hashing function \\(g\\) defined as:\n\\[g(k) := k\\mod 10\\]\nDelete the element 22 and provide the state of the hash table after this operation:",
     "crumbs": [
       "Exam",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ex 2024</span>"
     ]
   },
   {
     "objectID": "exam/2024.html#problem-4-mathcalo-notation-and-code-analysis",
     "href": "exam/2024.html#problem-4-mathcalo-notation-and-code-analysis",
-    "title": "2  Ex 2024",
+    "title": "3  Ex 2024",
     "section": "Problem 4: \\(\\mathcal{O}\\)-Notation and Code Analysis",
     "text": "Problem 4: \\(\\mathcal{O}\\)-Notation and Code Analysis\n\nfor each of the following cases provide a function \\(f: \\mathbb{N} \\to \\mathbb{R}\\) that satisfies the given asymptotic constraints:\n\n\\(f \\in \\omega \\left( \\frac{\\log x}{\\log \\log x}\\right)\\) and \\(f \\in \\omicron(\\log x)\\)\n\\(f \\in \\omega(\\sqrt[3]{m})\\) and \\(f \\in \\omicron\\left(\\frac{m}{\\log m}\\right)\\)\n\\(f \\in \\omega(\\log t!)\\) and \\(f \\in\\omicron(t^2)\\)\n\nSolve the following recurive equations. For all the equations it holds that \\(T(n) = 1\\) and \\(n\\leq 1\\). Assume for simplicity that for all equations \\(n\\) is chosen s.t. divisions result without a rest.\n\n\\(T(n) = T(n - 1) + 2n\\). \\(\\Rightarrow\\) \\(\\quad\\quad T(n) \\in \\Theta\\left(\\quad \\right)\\)\n\\(T(n) = n\\cdot T(n - 1)\\). \\(\\Rightarrow\\) \\(\\quad\\quad T(n) \\in \\Theta\\left(\\quad \\right)\\)\n\\(T(n) = 16\\cdot T(\\frac{n}{2})\\). \\(\\Rightarrow\\) \\(\\quad\\quad T(n) \\in \\Theta\\left(\\quad \\right)\\)\n\\(T(n) = 2\\cdot T(\\frac{n}{4}) + n\\). \\(\\Rightarrow\\) \\(\\quad\\quad T(n) \\in \\Theta\\left(\\quad \\right)\\)\n\nProvide the run-time complexit of the follwoing pseudocode algorithms in \\(\\mathcal{\\Theta}\\) notation.\n\n:\nread(k)\nfor i = 1 to k:\n j = k^2\n while j &gt; 1:\n    j = j / 3\n:\nread(t)\nk = 1\ni = 1\nwhile k &lt;= t : \n i = i + 1\n k = k + i\n:\ndef fun(n) :\n read(n)\n if n &lt; 10^6 : return\n f(n / 2)\n i = 0\n while i &lt; n : i = i + 1\n f(n / 2)",
     "crumbs": [
       "Exam",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ex 2024</span>"
     ]
   },
   {
     "objectID": "exam/2024.html#problem-5-short-proofs",
     "href": "exam/2024.html#problem-5-short-proofs",
-    "title": "2  Ex 2024",
+    "title": "3  Ex 2024",
     "section": "Problem 5: Short Proofs",
     "text": "Problem 5: Short Proofs\nShow or refute following propositions:\n\nLet \\(T = (V, E)\\) be an arbitrary \\((a, b)\\)-Tree. Then \\(T\\) is also a \\((a, b +  1)\\)-Tree\nFor any weighted, undirected, connected graph \\(G = (V, E)\\) any shortest-path tree is a minimal spanning tree.\nFor any \\(n &gt; 1000\\) there is a binary search tree that stores \\(n\\) keys \\(\\{1, \\ldots, n\\}\\)",
     "crumbs": [
       "Exam",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ex 2024</span>"
     ]
   },
   {
     "objectID": "exam/2024.html#problem-6-induction",
     "href": "exam/2024.html#problem-6-induction",
-    "title": "2  Ex 2024",
+    "title": "3  Ex 2024",
     "section": "Problem 6: Induction",
     "text": "Problem 6: Induction\nFor a set \\(X\\), \\(\\mathcal{P}(A)\\) is the set of all subsets of \\(X\\), called the power set.\nShows via mathematical induction that:\n\\[\\text{for any set } X \\text{ s.t. } |X| = n \\text{ it holds that } |\\mathcal{P}(X)| = 2^n\\]",
     "crumbs": [
       "Exam",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ex 2024</span>"
     ]
   },
   {
     "objectID": "exam/2024.html#problem-7-graphs",
     "href": "exam/2024.html#problem-7-graphs",
-    "title": "2  Ex 2024",
+    "title": "3  Ex 2024",
     "section": "Problem 7: Graphs",
     "text": "Problem 7: Graphs\n\nConsider the following graph \\(G\\):\n\n\n\ngraph-1\n\n\nCarry out the Dijkstra algorithm to find the shortest paths starting from the start node \\(S\\).\nProvide each (Predecessor, Distance)-combination that is assigned to the node \\(T\\) by the algorithm:\nprovide the adjacency field representation of the following graph (CSR). Use the 1 as the smallest index and sort the neighbours in increasing order w.r.t. the index.\n\n\n\ngraph-2\n\n\nDescribe in pseudocode how the k-th neighbor of the i-th node is represented in the adjacency-field representation, using 1 as the smallest index. Name the invariants in the code that guarantee that required entry exists in the data structure. Provide the asymptotic analsysis of the \\(\\Theta\\) run-time of the algorithm.",
     "crumbs": [
       "Exam",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Ex 2024</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ex 2024</span>"
     ]
   }
 ]
