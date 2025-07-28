@@ -14,7 +14,27 @@
     "href": "reading.html",
     "title": "1  Reading List",
     "section": "",
+    "text": "ADS",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Reading List</span>"
+    ]
+  },
+  {
+    "objectID": "reading.html#ads",
+    "href": "reading.html#ads",
+    "title": "1  Reading List",
+    "section": "",
     "text": "Basic & Light Reading\n\nUnlocking Algorithms. Cormen\nFirst Course in Algorithms Through Puzzles. Uehara\n\n\n\nIntermediate\n\nUnderstanding Algorithms and Data Structures. Brunksill\nAlgorithms + Data Structures = Programs. Wirth\nProblems on Algorithms. Ian Parberry\nFundamentals of Algorithmics. Brassard, Bratley\nFoundations of Algorithms. Neapolitan\nData Structures and Algorithms - a First Course. Adamson\nAlgorithms and Data Structures - Design, Correctness, and Analysis. Kingston\nData Structures and Their Algorithms. Lewis, Denenberg\nDesign and Analysis of Algorithms. Smith\n\n\n\nPython\n\nData Structures and Algorithms in Python. Lafore\nCompetitive Programming in Python. Duerr\n\n\n\nC\n\nAlgorithms and Data Structures - an Approach in C.\nPrograms and Data Structures in C. Ammeraal\nFoundations of Computer Science. Ullman\n\n\n\nC++\n\nData Structures and Algorithm Analysis in C++. Weiss\nData Structures and Problem Solving using C++. Weiss\nPrinciples of Algorithmic Problem Solving. Sannemo\n\n\n\nJava\n\nFundamentals of OOP and Data Structures in Java. Wiener\n\n\n\nAdvanced\n\nHow to Think About Algorithms. Jeff Edmonds\nBasic Toolbox. Melhorn\nAlgorithms. Erickson",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Reading List</span>"
+    ]
+  },
+  {
+    "objectID": "reading.html#discrete-math-and-graph-theory",
+    "href": "reading.html#discrete-math-and-graph-theory",
+    "title": "1  Reading List",
+    "section": "Discrete Math and Graph Theory",
+    "text": "Discrete Math and Graph Theory\n\nMathematical Structures for Computer Science. Judith Gersting\n\n3: Recurrence Relations & Analysis of Algorithms\n5: Graphs & Trees\n7: Graph Algorithms\n\nDiscrete Mathematics. Rosen 3: Algorithms 5: Induction & Recursion 8: Advanced Counting: recurrence relations 10: Graphs 11: Trees\nDiscrete & Combinatorial Mathematics\n\n4: Mathematical Induction\n5.7, 5.8: Analysis of Algorithms\n10: Recurrence Relations\n11, 12, 13: Graph Theory\n\nDiskrete Mathematik fuer Einsteiger. Beutelspacher\nDiscrete Mathematics in Computer Science. Golovnev, Kulikov\nConcrete Mathematics. Knuth\n\n\nGraph Specific\n\nGraph Theory - A Problem Oriented Approach. Daniel Marcus\nAlgorithmic Graph Theory. Alan Gibbons",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Reading List</span>"
     ]
