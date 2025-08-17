@@ -24,6 +24,7 @@ title: Reading List
 ### Python
 
 * Data Structures and Algorithms in Python. Lafore
+* Fundamentals of Python Data Structures. (2nd ed). Kenneth Lambert
 * Competitive Programming in Python. Duerr
 
 ### C
@@ -37,6 +38,7 @@ title: Reading List
 * Data Structures and Algorithm Analysis in C++. Weiss
 * Data Structures and Problem Solving using C++. Weiss
 * Principles of Algorithmic Problem Solving. Sannemo
+* Problem Solving in Data Structures & Algorithms Using C++. Hemant Jain
 
 ### Java
 
